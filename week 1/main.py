@@ -47,7 +47,6 @@ def excelWrite(path):
             break
         cont = str(input("Are there more headers? \npress enter to continue\n press n to leave\n"))
         if cont == 'n':
-            print("get out")
             break
     
     dataToExcel.pop(0)
@@ -90,13 +89,11 @@ def txtRead(path):
     output = open(path,"r")
     print(output.read())
     output.close
-    print("done")
 
 def txtWrite(path):
     output = open(path,"w")
     output.writelines(input("What would you like to write?\n"))
     output.close
-    print("done")
         
 def csv(path):
     while True:
