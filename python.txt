@@ -1,3 +1,8 @@
 100 days of code Python:
 
+starts 1/2
 1: Reading / writing files: TXT, CSV, Excel
+ends 1/5
+
+starts 1/6
+2:Web scraping and creating a text document out of it
