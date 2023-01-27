@@ -1,8 +1,13 @@
 100 days of code Python:
 
-starts 1/2
-1: Reading / writing files: TXT, CSV, Excel
-ends 1/5
+Week 1: Basic working with files, and command line
 
-starts 1/6
-2: Web scraping cyber news and writing it into a text document
+Project 1: Reading / writing files: TXT, CSV, Excel
+
+Project 2: Web scraping cyber news and writing it into a text document
+
+Project 3: Working with the Command line prompt
+
+Week 2: Regex,Subprocess, and Scapy
+
+Project 5: Network speed detector

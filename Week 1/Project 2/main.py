@@ -12,16 +12,13 @@ def scrapper(url):
     content = response.content
     soup = BeautifulSoup(content,'html.parser')
     for i,tag in enumerate(soup.find_all('td',attrs={'class':'title','valign':''})):
-        cnt += (str(i+1)+'\t\t' + tag.text + "\n"+ tag.a.get('href') + "\n")
+        cnt += (str(i+1)+'\t\t' + tag.text + "\n"+ " \t\t" + tag.a.get('href') + "\n")
     return(cnt)
 
 #Writes the data to a txt
 def writefile(cnt):
-    f = open("NewsCollection/" + str(date.today()) + ".txt", "x")
-    f.close
-    f = open("NewsCollection/" + str(date.today()) + ".txt", "w")
-    f.write(cnt)
-    f.close
+    with open("NewsCollection/" + str(date.today()) + ".txt", "w",encoding="utf-8") as f:
+        f.write(cnt)
     
 #Sets it off
 def main():
