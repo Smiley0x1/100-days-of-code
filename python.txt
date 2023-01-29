@@ -8,6 +8,14 @@ Project 2: Web scraping cyber news and writing it into a text document
 
 Project 3: Working with the Command line prompt
 
-Week 2: Regex,Subprocess, and Scapy
+Week 2: Subprocess, Scapy, Tkinter.io
 
-Project 5: Network speed detector
+Project 4: Network speed detector
+
+Project 5: Network Scanner + Port Scanner
+
+project 6: GUI for last two projects
+
+Week 3: PyAutoGui and testing for web vulns
+
+Project 7: SQLi
