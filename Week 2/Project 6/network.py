@@ -3,8 +3,7 @@ from scapy.all import Ether, ARP, srp, sr1, IP, TCP, conf
 from logging import getLogger, ERROR
 getLogger("scapy.runtime").setLevel(ERROR)
 
-def networkScan():
-    gateWay = str(input("What is your default gateway?:\n"))
+def networkScan(gateWay):
     gateWay+="/24"
     arp = ARP(pdst=gateWay)
     
@@ -68,18 +67,13 @@ def portScan(ip,mac):
             result=str(result[0:len(result)-2])
             return result
     
-def greeting():
-    print("Hello World!\nThis project is a mix of scanners that will give you all IPs of current devices on your network, their MAC addresses, and their open ports, \nHappy Scanning!")
 
-def main():
-    greeting()
-    data = networkScan()
+def main(target):
+    data = networkScan(target)
     ipopenports = []
-    print("This scan takes ~10 minutes\nPlease be patient")
     for i in data:
         ipopenports.append(portScan(i['ip'],i['mac']))
-    for i in ipopenports:
-        print(i+'\n')    
+    return ipopenports
 
 if __name__=="__main__":
     main()        

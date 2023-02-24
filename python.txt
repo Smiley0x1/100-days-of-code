@@ -1,4 +1,4 @@
-100 days of code Python:
+100 days of code:
 
 Week 1: Basic working with files, and command line
 
@@ -14,8 +14,8 @@ Project 4: Network speed detector
 
 Project 5: Network Scanner + Port Scanner
 
-project 6: GUI for last two projects
+project 6: Launcher for last two projects
 
-Week 3: PyAutoGui and testing for web vulns
+Week 3: SQLI
 
-Project 7: SQLi
+Project 7: Looking for text box

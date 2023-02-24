@@ -1,22 +1,35 @@
-from tkinter import *
-from tkinter import ttk
+import os,subprocess
 import network
 import scan
-#logic
 
-def run():
-    '''scan.main()
-    network.main()'''
+
+def main():
+    if os.path.exists('Results/') == False:
+        os.mkdir("Results")
+        
+    subprocess.Popen(
+        ['ipconfig',"|","findstr","Default Gateway",">",'results/Logging.txt'],
+        shell=True
+    )
     
-#title and launch of application
-root = Tk()
-root.title("Scanners")
+    textfile = open("results/Logging.txt",'r')
+    
+    for i in textfile:
+        gateway = i[39:50]
+        
+    print("Successful, a log has been created and your default gateway is ",gateway)
+            
+    textfile.close()
+            
+    sum = scan.main(gateway)
+    print("It took",sum,"to reach your default gateway\nNow scanning for open ports")
+    
+    print("Please be patient, this will take a while(~10 minutes)")
+    
+    openPorts = network.main(gateway)
+    print("Your open ports are",end=" ")
+    for i in openPorts:
+        print(i,end=', ')
+    
 
-#spaces elements
-mainframe = ttk.Frame(root, padding="3 3 12 12")
-mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
-root.columnconfigure(0, weight=1)
-root.rowconfigure(0, weight=1)
-
-root.mainloop()
-run()
+main()

@@ -1,12 +1,8 @@
 from bs4 import BeautifulSoup 
 import requests
-from datetime import date
 
 #Scrapes the data from the site and helps to format it
-def scrapper(url):
-    print('Extracting Hacker News Stories...')
-    cnt = ''
-    cnt +=('HN Top Stories:\n'+'-'*150+'\n')
+def checker(url):
     response = requests.get(url)
     content = response.content
     soup = BeautifulSoup(content,'html.parser')
@@ -14,15 +10,19 @@ def scrapper(url):
         cnt += (str(i+1)+'\t\t' + tag.text + "\n"+ " \t\t" + tag.a.get('href') + "\n")
     return(cnt)
 
-#Writes the data to a txt
-def writefile(cnt):
-    with open("NewsCollection/" + str(date.today()) + ".txt", "w",encoding="utf-8") as f:
-        f.write(cnt)
-    
+
 #Sets it off
 def main():
-    cnt = scrapper('https://news.ycombinator.com/')
-    writefile(cnt)
+    url = input("What is the URL that we are scanning?")
+    '''html= BeautifulSoup('url','html.parser')
+    print(html.findall)'''
+    #cnt = checker(url)
+    r  = requests.get(url)
+    data = r.text
+    soup = BeautifulSoup(data,features='lxml')
+
+    for possibleVuln in soup.find_all('input'):
+        print(possibleVuln,"\n")
     
 #Begins program
 main()
