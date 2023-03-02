@@ -1,4 +1,4 @@
-100 days of code:
+100 days of Code(Python)/Cybersecurity:
 
 Week 1: Basic working with files, and command line
 
@@ -19,3 +19,9 @@ project 6: Launcher for last two projects
 Week 3: SQLI
 
 Project 7: Looking for text box
+
+Project 8: Tests for SQLI
+
+Week 4: Cryptography Basics
+
+Project 9: Encryption/Decryption/Cracker of Ceaser Cipher
