@@ -25,3 +25,7 @@ Project 8: Tests for SQLI
 Week 4: Cryptography Basics
 
 Project 9: Encryption/Decryption/Cracker of Ceaser Cipher
+
+Project 10: Search for English
+
+Project 11: Encryption of File
